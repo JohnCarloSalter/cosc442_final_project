@@ -1,0 +1,15 @@
+﻿PROJECT LEGACY
+
+The purpose of this game is to survive as long as possible while eliminating enemies and dodging falling meteors.  
+
+As the game progresses, the meteors fall faster and more enemies increase on the screen. The player will use a wealth of weapons to deal with enemies and meteors. As the time progresses, the player can collect several power ups that will allows manipulation of the game environment such as slowing down enemies, destroying all enemies and meteors on the screen, increasing the players movement speed etc. 
+
+FEATURES:
+Background Music
+Sound effects
+Fluid controls
+Featured artwork by Kennan Myers. 
+Better than Pong
+Fast paced Gameplay and action
+Start menu in English 
+

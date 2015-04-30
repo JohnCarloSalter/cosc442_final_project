@@ -1,0 +1,106 @@
+Class PLegacy:
+Main driver class. Creates the frame and the Game Object Manager.
+
+<<<<<<< HEAD
+=======
+
+
+Class Audio:
+
+Contains static methods for starting and stopping music and sounds.
+
+>>>>>>> 9803a6731e581e825cd70a938c255fb05abbf20f
+Class GamePanel:
+Parent class to all panels and menus in the game. Provides functions to start and stop game music.
+
+Class StartMenu:
+Main menu of the game. Has four different options: Play, Help, Settings, and Quit. Play will direct the player to the class Test, Help goes to HelpMenu, Settings goes to SettingsMenu, and Quit closes the game.
+
+Class HelpMenu:
+Gives the player instructions on how to play the game. Provides two buttons: one to start the game, and one to return to StartMenu.
+
+Class SettingsMenu:
+Provides options to change the difficulty of the game and the ship graphic.
+
+<<<<<<< HEAD
+=======
+Class gameOver:
+
+Panel that appears after the player has run out of lives during gameplay. Allows the player to return to the main menu, or exit the game.
+
+Class gamePaused:
+
+Appears when the player pauses the game. Returning to the game deletes this panel.
+
+Class HighScores:
+
+A panel that shows the best scores. Scores are saved upon gameOver into a document, which is then displayed in this panel.
+
+
+
+>>>>>>> 9803a6731e581e825cd70a938c255fb05abbf20f
+Class Test:
+Actual level to the game. Location where all of the gameplay happens. Object generators are instantiated here, while the Game Object Manager updates through the Javax.swing.timer in the actionPerformed() method. Uses class keytracker to get keyboard commmands.
+
+Class keyTracker:
+Checks keyboard status - keys pressed, released, etc.
+
+Class HUD:
+Draws the ship's current health, ammo, timer, and any current power ups.
+
+Class GameObject:
+Parent class to all objects in the game. All objects that appear on the screen is a GameObject. GameObject takes two types of objects: objects to update through the GameObjectManager, and objects that don't. Contains variables for the current x and y coordinates and an image of the object. Contains an abstract method onCollision that changes based on the object. Every Game Object has methods Load, Update, Unload, Draw, getArea, and onCollision. Load creates the image of the object, Update determines the status of the object, and Unload sets up the object to be removed from the GOM. Draw draws the object on the screen. onCollision sets logic for each object to perform after colliding with another object.
+
+Class GameObjectManager:
+Contains a list of Game Objects. There are 3 lists: the current list of objects, a list of objects to add, and a list of objects to remove. the GOM contains methods to give commands to all GameObjects in the current list, so that each object doesn't have to individually update. In one GOM update cycle, the objects in the list are checked for collision and are updated. Then, the objects to be added are added to the list, while the objects to be removed from the list are removed.
+
+
+Class Ship:
+The object that the player controls. Space button fires two lasers, while arrow keys move left and right. Can collect power ups that can either make the ship auto-fire lasers or make piercing lasers. Has a set amount of ammo that must be refilled. On collision with a meteor, the ship loses 1 health.
+
+
+
+Class Laser:
+Created when the ship fires. Deletes on contact with other objects except ship and ammo. Pierce lasers do not delete on contact.
+
+
+
+Class Ammo:
+Collectable object that restores ammo.
+
+
+
+Class AmmoGenerator:
+Creates an Ammo object after a random amount of time at a random location on the Test screen.
+
+
+
+Class Life:
+Collectable object that restores health.
+
+
+
+Class AutoFirePower:
+Collectable powerup that lets the ship auto fire.
+
+
+
+Class LaserPiercePower:
+Collectable powerup that gives the ship pierce lasers.
+
+
+
+Class PowerUpGenerator:
+Creates either a Life, AutoFirePower, or LaserPiercePower object after a random amount of time at a random location on the Test screen.
+
+
+
+Class Meteor:
+"Enemy" objects that must be dodged by the player. Deletes on contact with ship.
+
+
+
+Class MeteorGenerator:
+Creates a Meteor object after a random amount of time at a random location on the Test Screen.
+
+
