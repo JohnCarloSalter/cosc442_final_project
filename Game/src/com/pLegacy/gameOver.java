@@ -1,3 +1,4 @@
+package com.pLegacy;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -7,35 +8,32 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 
-public class gamePaused extends GamePanel{
+public class gameOver extends GamePanel{
 
+	private Image over;
 	
-	private Image pause;
-
-	public gamePaused(){
-		setBackground(Color.white);
-	}
-
 	public void paintComponent(Graphics g){
 		
 		super.paintComponent(g);
 		
-		Graphics2D g2=(Graphics2D)g;
-		int size=30;
-		
 		try {
-			pause  = ImageIO.read(new File("Graphics/Menu/pause.gif"));
+			over=ImageIO.read(new File("Graphics/Background/owned.png"));
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
+		
+		Graphics2D g2=(Graphics2D)g;
+		
+		g2.drawImage(over, 0,0,null);
+		
+		int size=30;
 		
 		//sets the font
 		g2.setFont(new Font("serif",Font.BOLD+Font.ITALIC,size));
@@ -48,30 +46,31 @@ public class gamePaused extends GamePanel{
 		
 		g2.setColor(Color.WHITE);
 		
-		g2.drawImage(pause, 150,0,null);
-		
-			//if(PanelManager.isPaused==true){
-				//draws a new shappe with a border
-				g2.setStroke(new BasicStroke(3f));
 				
-				g2.fill(new Rectangle2D.Double(260,300, 300,60));
-				g2.setColor(Color.black);
-				
-				g2.draw(new Rectangle2D.Double(260, 300, 300, 60));
-			    g2.drawString("PAUSED!",340, 325);
-				
-				g2.setFont(new Font("serif",Font.BOLD+Font.ITALIC,size-10));
-				g2.drawString("press (r) to resume", 310,348);
-				
-				
-		//}
+			//draws a new shappe with a border
+			g2.setStroke(new BasicStroke(3f));
+			
+			
+			g2.fill(new Rectangle2D.Double(260,200, 300, 200));
+			g2.setColor(Color.black);
+			
+			g2.draw(new Rectangle2D.Double(260, 200, 300, 200));
+		    g2.drawString("GAME OVER!",296, 300);
+			
+			g2.setFont(new Font("serif",Font.BOLD+Font.ITALIC,size-10));
+			g2.drawString("press (r) to replay (q) to quit", 280,340);
+			g2.setFont(new Font("serif",Font.BOLD+Font.ITALIC,size));
+			g2.drawString("SCORE: "+Ship.score, 310, 250);		
+	
 				
 	}
 	
 	
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		// TODO Auto-generated method stub
 		
 	}
 

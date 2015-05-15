@@ -1,17 +1,18 @@
+package com.pLegacy;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
 
-public class AutoFirePower extends GameObject 
+public class LaserPiercePower extends GameObject 
 {
-	public AutoFirePower(int x, int y)
+	public LaserPiercePower(int x, int y)
 	{
 		super(x, y);
 	}
 	@Override
 	public void Load() 
 	{
-		super.Load("power_up.png");
+		super.Load("burst.gif");
 	}
 
 	@Override
