@@ -1,4 +1,5 @@
 package com.pLegacy;
+import com.pLegacy.gameObjects.*;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -12,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
+import com.pLegacy.gameObjects.Ship;
 
 
 public class gameOver extends GamePanel{

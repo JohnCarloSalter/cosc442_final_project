@@ -1,4 +1,4 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -20,6 +20,11 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Timer;
 
+import com.pLegacy.Audio;
+import com.pLegacy.PanelManager;
+import com.pLegacy.SettingsMenu;
+import com.pLegacy.keyTracker;
+
 public class Ship extends GameObject implements KeyListener, ActionListener
 {
     public boolean autofireon = false;
@@ -28,9 +33,9 @@ public class Ship extends GameObject implements KeyListener, ActionListener
     Timer autoduration;
     private boolean timestart;
     keyTracker k=new keyTracker();
-    int ammo = 10;
-    int health = 10;
-    static int score=0;
+    public int ammo = 10;
+    public int health = 10;
+    public static int score=0;
     public boolean isdead=false;
     boolean isHit=false;
     BufferedImage pierceLaser;

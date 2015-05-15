@@ -1,4 +1,5 @@
 package com.pLegacy;
+import com.pLegacy.gameObjects.*;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -23,6 +24,8 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 import javax.imageio.ImageIO;
+
+import com.pLegacy.gameObjects.Ship;
 
 
 public class HighScores extends GamePanel implements MouseListener {

@@ -1,4 +1,4 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -10,6 +10,10 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
+
+import com.pLegacy.GameObjectManager;
+import com.pLegacy.PanelManager;
+import com.pLegacy.Test;
 
 public class MeteorGenerator extends GameObject implements ActionListener
 {

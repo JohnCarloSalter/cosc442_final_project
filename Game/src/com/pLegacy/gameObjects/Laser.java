@@ -1,4 +1,4 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -10,6 +10,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.UnsupportedAudioFileException;
+
+import com.pLegacy.Audio;
+import com.pLegacy.PanelManager;
 
 
 public class Laser extends GameObject

@@ -3,6 +3,9 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import com.pLegacy.gameObjects.GameObject;
+import com.pLegacy.gameObjects.Laser;
+
 /**
  * This class processes all of the game objects that will be added/removed/updated in the game.
  * Every game object must be instantiated with the GameObjectManager and be added to the current list.

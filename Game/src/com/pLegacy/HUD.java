@@ -1,4 +1,6 @@
 package com.pLegacy;
+
+import com.pLegacy.gameObjects.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -12,6 +14,8 @@ import java.util.Date;
 import javax.swing.Timer;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+
+import com.pLegacy.gameObjects.Ship;
 
 
 

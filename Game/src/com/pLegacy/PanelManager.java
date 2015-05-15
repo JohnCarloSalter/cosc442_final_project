@@ -1,6 +1,8 @@
 package com.pLegacy;
 import javax.swing.JFrame;
 
+import com.pLegacy.gameObjects.Ship;
+
 
 
 

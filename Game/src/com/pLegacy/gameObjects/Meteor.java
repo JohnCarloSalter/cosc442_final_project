@@ -1,4 +1,4 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+
+import com.pLegacy.Audio;
 
 
 

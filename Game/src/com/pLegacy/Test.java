@@ -1,4 +1,6 @@
 package com.pLegacy;
+
+import com.pLegacy.gameObjects.*;
 import java.awt.AlphaComposite;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -28,8 +30,13 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
-
 import javax.swing.JFrame;
+
+import com.pLegacy.gameObjects.AmmoGenerator;
+import com.pLegacy.gameObjects.GameObject;
+import com.pLegacy.gameObjects.MeteorGenerator;
+import com.pLegacy.gameObjects.PowerUpGenerator;
+import com.pLegacy.gameObjects.Ship;
 
 
 

@@ -7,14 +7,18 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.UnsupportedAudioFileException;
+
+import com.pLegacy.gameObjects.Ship;
 
 
 /**

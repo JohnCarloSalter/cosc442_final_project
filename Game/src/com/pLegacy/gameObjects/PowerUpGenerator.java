@@ -1,10 +1,15 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+
 import javax.swing.Timer;
+
+import com.pLegacy.GameObjectManager;
+import com.pLegacy.GamePanel;
+import com.pLegacy.PanelManager;
 
 public class PowerUpGenerator extends GameObject implements ActionListener
 {

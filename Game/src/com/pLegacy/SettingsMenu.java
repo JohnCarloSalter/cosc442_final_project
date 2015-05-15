@@ -22,6 +22,9 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import com.pLegacy.gameObjects.Meteor;
+import com.pLegacy.gameObjects.Ship;
+
 
 public class SettingsMenu extends JFrame {
 	private JLabel Label1;
@@ -33,8 +36,8 @@ public class SettingsMenu extends JFrame {
 	private JPanel Panel1;
 	private JPanel Main;
 	private JButton Done;
-	static final String[] namelist = {"Blue","Pink","Green"};
-	static final String[][] names =
+	public static final String[] namelist = {"Blue","Pink","Green"};
+	public static final String[][] names =
 			{	{"Blue","Blue2","Blue3","Blue4"},
 				{"Pink","Pink2","Pink3","Pink4"},
 				{"Green","Green2","Green3","Green4"} };

@@ -1,5 +1,7 @@
-package com.pLegacy;
+package com.pLegacy.gameObjects;
 import java.awt.Graphics;
+
+import com.pLegacy.Audio;
 
 
 public class Life extends GameObject
