@@ -22,6 +22,7 @@ public class ShipTest {
 
 	private static Ship fixture;
 	private static BufferedImage testImage;
+	private static BufferedImage testObjectImage;
 	
 	
 	@Before
@@ -29,7 +30,7 @@ public class ShipTest {
 		Ship fixture = new Ship(0, 0);
 		fixture.Load();
 		testImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\Blue.png"));
-		
+		testObjectImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\testImage.png"));
 	}
 
 	@After
@@ -63,8 +64,7 @@ public class ShipTest {
 	//Autofire is on.
 	//X > 730
 	//X < 0	
-	//When health is zero, make sure the ship is "dead".
-	
+	//When health is zero, make sure the ship is "dead".	
 	@Test
 	//Make sure ship is marked dead when HP = 0.
 	public void testUpdate1() {
@@ -122,18 +122,127 @@ public class ShipTest {
 	}
 
 	@Test
-	public void testOnCollision() {
-		fail("Not yet implemented");
+	public void testOnCollision1() {
+		GameObject testObject = new Meteor(0, 0, testObjectImage, 1);
+		fixture.health = 5;
+		fixture.setCD(5);
+		fixture.score = 0;
+		fixture.onCollision(testObject);
+		assertTrue(fixture.health == 4);
+		assertTrue(fixture.getCD() == 10);
+		assertTrue(fixture.score == -100);
 	}
-
+	
 	@Test
-	public void testShip() {
-		fail("Not yet implemented");
+	public void testOnCollision2() {
+		GameObject testObject = new AutoFirePower(0, 0);
+		fixture.onCollision(testObject);
+		fixture.getAutoduration().stop();
+		fixture.autofireon = true;
+		fixture.onCollision(testObject);
+		assertTrue(fixture.getAutoduration().isRunning());
+		assertTrue(fixture.autofireon);		
+	}
+	
+	@Test
+	public void testOnCollision3() {
+		GameObject testObject = new AutoFirePower(0, 0);
+		fixture.onCollision(testObject);
+		fixture.getAutoduration().stop();
+		fixture.autofireon = false;
+		fixture.onCollision(testObject);
+		assertFalse(fixture.getAutoduration().isRunning());
+		assertTrue(fixture.autofireon);		
+	}
+	
+	@Test
+	public void testOnCollision4() {
+		GameObject testObject = new LaserPiercePower(0, 0);
+		fixture.piercinglasers = 0;
+		fixture.onCollision(testObject);
+		assertTrue(fixture.piercinglasers == 5);
+	}
+	
+	@Test
+	public void testOnCollision5() {
+		GameObject testObject = new Ammo(0, 0);
+		fixture.ammo = 6;
+		fixture.onCollision(testObject);
+		assertTrue(fixture.ammo == 10);
+	}
+	
+	@Test
+	public void testOnCollision6() {
+		GameObject testObject = new Ammo(0, 0);
+		fixture.ammo = 5;
+		fixture.onCollision(testObject);
+		assertTrue(fixture.ammo == 9);
+	}
+	
+	@Test
+	//This test will be large but will test all switch cases of Life.
+	public void testOnCollision7() {
+		GameObject testObj = new Life(0,0);
+		fixture.health = 1;
+		fixture.setDmgcounter(-1);
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 1);
+		assertTrue(fixture.getDMGCounter() == 3);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 2);
+		assertTrue(fixture.getDMGCounter() == 3);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 3);
+		assertTrue(fixture.getDMGCounter() == 3);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 4);
+		assertTrue(fixture.getDMGCounter() == 2);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 5);
+		assertTrue(fixture.getDMGCounter() == 2);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 6);
+		assertTrue(fixture.getDMGCounter() == 2);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 7);
+		assertTrue(fixture.getDMGCounter() == 1);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 8);
+		assertTrue(fixture.getDMGCounter() == 1);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 9);
+		assertTrue(fixture.getDMGCounter() == 1);
+		
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 10);
+		assertTrue(fixture.getDMGCounter() == 0);
+	}
+	
+	@Test
+	//This test will be large but will test all switch cases of Life.
+	public void testOnCollision8() {
+		GameObject testObj = new Life(0,0);
+		fixture.health = 10;
+		fixture.onCollision(testObj);
+		assertTrue(fixture.health == 10);
+		assertTrue(fixture.getDMGCounter() == 0);
 	}
 
 	@Test
 	public void testSetLaserImage() {
-		fail("Not yet implemented");
+		try {
+			fixture.setLaserImage();
+		} catch(Exception eRef) {
+			fail("Exception was thrown after .setLaserImage() call.");
+		}
 	}
 
 	@Test

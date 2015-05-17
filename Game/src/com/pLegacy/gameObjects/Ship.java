@@ -58,7 +58,10 @@ public class Ship extends GameObject implements KeyListener, ActionListener
     
     //Getters
     public Timer getTimer() { return tm; }
+    public int getCD() { return cd; }
+    public int getDMGCounter() { return dmgcounter; }
     //Setters
+    public void setCD(int x) { cd = x; }
     public void setTimestart(boolean b) { timestart = b; }
     public Timer getAutoduration() { return autoduration; }
     public void setDmgcounter(int x) { dmgcounter = x; }
@@ -128,7 +131,6 @@ public class Ship extends GameObject implements KeyListener, ActionListener
 			pierceLaser = ImageIO.read(new File("Graphics/GameObjects/burst_icon.gif"));
 			laser = ImageIO.read(new File("Graphics/GameObjects/laser1.png"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -231,7 +233,6 @@ public class Ship extends GameObject implements KeyListener, ActionListener
 		}
 		else if(e.getSource().equals(tm) && !isdead && !PanelManager.isPaused)
 		{
-				// TODO Auto-generated method stub
 				Laser l = new Laser(getX()+image.getWidth()/2-3, getY()+image.getHeight()/2-12, this, laser);
 				gom.addObject(l);
 		}
