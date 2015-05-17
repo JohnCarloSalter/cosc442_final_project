@@ -45,7 +45,7 @@ public class PanelManager
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 		
 	}
@@ -59,7 +59,9 @@ public class PanelManager
 			old.setVisible(false);
 			frame.remove(old);
 		}
-		catch(Exception e){}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	public static void ScoresMenu(GamePanel old){
@@ -74,7 +76,7 @@ public class PanelManager
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 		
 	}
@@ -86,7 +88,7 @@ public class PanelManager
 			if (game != null)
 				game = null;
 			
-			if(fromhelp == false)
+			if(!fromhelp)
 			{
 				try
 				{
@@ -94,7 +96,7 @@ public class PanelManager
 				}
 				catch(Exception e)
 				{
-					
+					e.printStackTrace();
 				}
 			}
 		
@@ -104,7 +106,9 @@ public class PanelManager
 			startMenu.setVisible(true);
 			old.setVisible(false);
 			frame.remove(old);
-		}catch(Exception e){}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	//just an extention of the paused method, nothing special, switches between the 2 panels
@@ -117,7 +121,9 @@ public class PanelManager
 			game.setVisible(false);
 			frame.remove(game);
 		}
-		catch(Exception e){}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	//passes gameover panel to MainMenu. 
@@ -127,7 +133,9 @@ public class PanelManager
 			GameObjectManager _gom = new GameObjectManager();
 			SetGOM(_gom);
 			MainMenu(go, false);
-		}catch(Exception e){}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	//PAUSES THE GAME
@@ -155,7 +163,9 @@ public class PanelManager
 		try{
 			StartMenu startMenu = new StartMenu(frame, false);
 			frame.add(startMenu);
-		}catch(Exception e){}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	

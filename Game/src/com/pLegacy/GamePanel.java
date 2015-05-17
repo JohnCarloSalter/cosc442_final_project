@@ -38,7 +38,7 @@ public abstract class GamePanel extends JPanel implements ActionListener
 		 * @param f
 		 */
 		public GamePanel(){
-			
+			//empty
 		}
 		public GamePanel(JFrame f)
 		{

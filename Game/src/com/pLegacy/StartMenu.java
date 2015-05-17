@@ -14,7 +14,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Double;
 import java.io.File;
 import java.io.IOException;
-
+// hiS
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -84,7 +84,7 @@ public class StartMenu extends GamePanel implements MouseMotionListener,MouseLis
 						background = ImageIO.read(new File("Graphics/Background/background1.jpg"));
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
-						
+						e.printStackTrace();
 					}
 					 HighScores.readScores();
 						t.start();

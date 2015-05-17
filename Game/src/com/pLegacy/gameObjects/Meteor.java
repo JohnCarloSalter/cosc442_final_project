@@ -93,7 +93,7 @@ public class Meteor extends GameObject
 	{
 		if(obj instanceof Ship)
 			Unload();
-		if(obj instanceof Laser && isHit == false)
+		if(obj instanceof Laser && !isHit)
 		{
 			isHit = true;
 			Ship.score+=10;

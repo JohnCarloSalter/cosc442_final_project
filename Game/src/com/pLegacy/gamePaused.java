@@ -73,7 +73,7 @@ public class gamePaused extends GamePanel{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
+		//do nothing
 	}
 
 }

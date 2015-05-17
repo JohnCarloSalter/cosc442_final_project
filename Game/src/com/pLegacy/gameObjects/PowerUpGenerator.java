@@ -35,7 +35,7 @@ public class PowerUpGenerator extends GameObject implements ActionListener
 	@Override
 	public void Update()
 	{
-		
+		//no  update event
 	}
 
 	@Override
@@ -56,15 +56,15 @@ public class PowerUpGenerator extends GameObject implements ActionListener
 			case 0: //No power up generated
 				break;
 			case 1:
-				AutoFirePower p = new AutoFirePower(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-50);
+				AutoFirePower p = new AutoFirePower(generator.nextInt(screen.getWidth()-30), screen.getHeight()-screen.getHeight()-50);
 				gom.addObject(p);
 				break;
 			case 2:
-				LaserPiercePower q = new LaserPiercePower(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-50);
+				LaserPiercePower q = new LaserPiercePower(generator.nextInt(screen.getWidth()-30), screen.getHeight()-screen.getHeight()-50);
 				gom.addObject(q);
 				break;
 			case 3:
-				Life l = new Life(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-50);
+				Life l = new Life(generator.nextInt(screen.getWidth()-30), screen.getHeight()-screen.getHeight()-50);
 				gom.addObject(l);
 				break;
 			}
@@ -73,7 +73,7 @@ public class PowerUpGenerator extends GameObject implements ActionListener
 
 	public void setTimer()
 	{
-		if(PanelManager.isPaused == false )
+		if(!PanelManager.isPaused)
 		{
 			time = generator.nextInt(19500)+1500;
 			timer = new Timer(time, this);
