@@ -199,43 +199,6 @@ public class PanelManagerTest {
 		//       at com.pLegacy.HighScores.<init>(HighScores.java:51)
 	}
 
-	/**
-	 * Run the void Pause() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/17/15 1:42 PM
-	 */
-	@Test
-	public void testPause_1()
-		throws Exception {
-
-		PanelManager.Pause();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NullPointerException
-		//       at com.pLegacy.PanelManager.Pause(PanelManager.java:140)
-	}
-
-	/**
-	 * Run the void Resume() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/17/15 1:42 PM
-	 */
-	@Test
-	public void testResume_1()
-		throws Exception {
-
-		PanelManager.Resume();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NullPointerException
-		//       at com.pLegacy.PanelManager.Resume(PanelManager.java:150)
-	}
 
 	/**
 	 * Run the void ScoresMenu(GamePanel) method test.

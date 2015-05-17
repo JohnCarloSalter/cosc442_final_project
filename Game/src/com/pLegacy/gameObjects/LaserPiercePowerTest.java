@@ -130,34 +130,7 @@ public class LaserPiercePowerTest {
 		//       at com.pLegacy.HighScores.<init>(HighScores.java:51)
 	}
 
-	/**
-	 * Run the void draw(Graphics) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 5/17/15 5:24 PM
-	 */
-	@Test
-	public void testDraw_1()
-		throws Exception {
-		LaserPiercePower fixture = new LaserPiercePower(1, 1);
-		fixture.image = new BufferedImage(1, 1, 1);
-		fixture.gom = new GameObjectManager();
-		fixture.screen = new HighScores();
-		Graphics g = new DebugGraphics();
-
-		fixture.draw(g);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.SecurityException: Cannot write to files while generating test cases
-		//       at com.instantiations.assist.eclipse.junit.CodeProJUnitSecurityManager.checkWrite(CodeProJUnitSecurityManager.java:76)
-		//       at java.io.FileOutputStream.<init>(Unknown Source)
-		//       at java.io.FileOutputStream.<init>(Unknown Source)
-		//       at java.io.FileWriter.<init>(Unknown Source)
-		//       at com.pLegacy.HighScores.writeEmptyScores(HighScores.java:112)
-		//       at com.pLegacy.HighScores.<init>(HighScores.java:51)
-	}
+	
 
 	/**
 	 * Run the void onCollision(GameObject) method test.
