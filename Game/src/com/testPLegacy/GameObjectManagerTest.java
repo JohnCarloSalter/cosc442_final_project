@@ -18,16 +18,16 @@ import org.junit.Test;
 
 public class GameObjectManagerTest  {
 
-	static GameObjectManager fixture;
-	static BufferedImage testImage;
-	static GameObject sampleObject;
-	static int errorCounter = 0;
+	private static GameObjectManager fixture;
+	private static BufferedImage testImage;
+	private static GameObject sampleObject;
+	private static int errorCounter = 0;
 	
 	@Before
 	public void setUp() throws IOException {
 		fixture = new GameObjectManager();
 		try {
-			testImage = ImageIO.read(new File("C:\\Users\\John Carlo Salter\\Documents\\College Classes\\Quality Assurance Final Project\\cosc442_final_project\\Game\\Graphics\\GameObjects\\power_up.png"));
+			testImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\Meteor2.png"));
 		} catch (IOException ioeRef) {
 			System.err.println("Can't read input file! " + errorCounter );
 			errorCounter++;
