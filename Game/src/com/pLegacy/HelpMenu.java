@@ -135,23 +135,32 @@ public void actionPerformed(ActionEvent e){
 	repaint();
 }	
 	@Override
-public void mouseDragged(MouseEvent e) {}
+public void mouseDragged(MouseEvent e) {//no mouse dragged event
+	}
 	@Override
-	public void mousePressed(MouseEvent e) {}
-
-
-
-	@Override
-	public void mouseReleased(MouseEvent e) {}
+	public void mousePressed(MouseEvent e) {//no mouse pressed event
+		
+	}
 
 
 
 	@Override
-	public void mouseEntered(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {//no mouse released event
+		
+	}
 
 
 
 	@Override
-	public void mouseExited(MouseEvent e) {}
+	public void mouseEntered(MouseEvent e) {
+		//no mouse entered event
+	}
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		//no mouse exited event
+	}
 
 }

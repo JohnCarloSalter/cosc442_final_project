@@ -45,13 +45,13 @@ public class HUD extends GamePanel
 		} 
 		catch (IOException e) 
 		{
-			
+			e.printStackTrace();
 		}
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		if(PanelManager.isPaused==false)
+		if(!PanelManager.isPaused)
 			time++;
 
 	}
@@ -69,17 +69,17 @@ public class HUD extends GamePanel
 		//Draws health
 		for(int x = 0; x < ship.health; x++)
 		{
-			g.drawImage(health, (getScreenWidth()/80 + 20*x), getScreenHeight()-50 , null);
+			g.drawImage(health, getScreenWidth()/80 + 20*x, getScreenHeight()-50 , null);
 		}
 		
 		//Draws power up combos
-		if(ship.autofireon == true)
+		if(ship.autofireon)
 		{
-			g.drawImage(powerup, (getScreenWidth()/4+30), getScreenHeight()-50, null);
+			g.drawImage(powerup, getScreenWidth()/4+30, getScreenHeight()-50, null);
 		}
 		for(int x = 0; x < ship.piercinglasers; x++)
 		{
-			g.drawImage(pierce, (getScreenWidth()/4 + 180 - 28*x), getScreenHeight()-50, null);
+			g.drawImage(pierce, getScreenWidth()/4 + 180 - 28*x, getScreenHeight()-50, null);
 		}
 		
 		//Draw Game Time

@@ -152,7 +152,7 @@ public class Test extends GamePanel implements KeyListener
 			
 		}
 		
-		if(levelChange==false || bgalpha1 > 0)
+		if(!levelChange|| bgalpha1 > 0)
 		{
 			if(levelChange)
 			{
@@ -283,7 +283,7 @@ public class Test extends GamePanel implements KeyListener
 		
 		//####################DEAD SHIP######################################
 					//if the you die, stops this panels music as well.
-					if(ship.isdead==true){
+					if(ship.isdead){
 						MG.clear();
 						isAlive=false;
 						HighScores.writeScores();
@@ -305,7 +305,7 @@ public class Test extends GamePanel implements KeyListener
 		
 				
 		hud.actionPerformed(e);
-		if(isAlive == true)
+		if(isAlive)
 		{
 			gom.Update();
 			gom.Load();
@@ -319,15 +319,19 @@ public class Test extends GamePanel implements KeyListener
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {}
+	public void keyTyped(KeyEvent e) {
+		//do nothing
+	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {}
+	public void keyReleased(KeyEvent e) {
+		//do nothing
+	}
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
-		if(PanelManager.isPaused==true)
+		if(PanelManager.isPaused)
 		{
 			if(e.getKeyCode()==KeyEvent.VK_R)
 			{	
@@ -337,7 +341,7 @@ public class Test extends GamePanel implements KeyListener
 		}
 			
 		//CODE FOR GAME OVER SCREEN
-		if(ship.isdead==true)
+		if(ship.isdead)
 		{	
 			if(e.getKeyCode()==KeyEvent.VK_R)
 			{
@@ -357,7 +361,7 @@ public class Test extends GamePanel implements KeyListener
 			
 			
 	//Toggles Debug Mode
-	if(e.getKeyCode()==(KeyEvent.VK_F1))
+	if(e.getKeyCode()==KeyEvent.VK_F1)
 		gom.Debug();
 	}
 

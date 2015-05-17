@@ -45,7 +45,7 @@ public class MeteorGenerator extends GameObject implements ActionListener
 	@Override
 	public void Update()
 	{
-		
+		//no  update event
 	}
 
 	@Override
@@ -59,10 +59,10 @@ public class MeteorGenerator extends GameObject implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
 	{
-		if(PanelManager.isPaused == false){
+		if(!PanelManager.isPaused){
 			
 			//Meteor m = new Meteor(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-50, image, currentBaseSpeed);
-			gom.addObject(new Meteor(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-150,image,currentBaseSpeed));
+			gom.addObject(new Meteor(generator.nextInt(screen.getWidth()-30), screen.getHeight()-screen.getHeight()-150,image,currentBaseSpeed));
 		
 			meteorCount++;
 			

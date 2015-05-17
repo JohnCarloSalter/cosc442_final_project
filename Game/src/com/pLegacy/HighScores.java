@@ -104,6 +104,7 @@ public class HighScores extends GamePanel implements MouseListener {
 		    out.close();
 		} catch (IOException e) {
 		    //oh noes!
+			e.printStackTrace();
 		}
 	}
 	
@@ -114,6 +115,7 @@ public class HighScores extends GamePanel implements MouseListener {
 		    out.close();
 		} catch (IOException e) {
 		    //oh noes!
+			e.printStackTrace();
 		}
 	}
 	
@@ -161,7 +163,7 @@ public class HighScores extends GamePanel implements MouseListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
+		//no  actionperformed event
 		
 	}
 

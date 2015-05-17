@@ -31,7 +31,7 @@ public class AmmoGenerator extends GameObject implements ActionListener
 	@Override
 	public void Update()
 	{
-		
+		//no update method
 	}
 
 	@Override
@@ -45,9 +45,9 @@ public class AmmoGenerator extends GameObject implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent arg0) 
 	{
-		if(PanelManager.isPaused==false)
+		if(!PanelManager.isPaused)
 		{
-			Ammo a = new Ammo(generator.nextInt(screen.getWidth()-30), (screen.getHeight()-screen.getHeight())-50);
+			Ammo a = new Ammo(generator.nextInt(screen.getWidth()-30), screen.getHeight()-screen.getHeight()-50);
 			gom.addObject(a);
 		}
 		setTimer();

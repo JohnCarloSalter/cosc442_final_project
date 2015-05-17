@@ -26,15 +26,15 @@ public class Audio
 		} 
 		catch (UnsupportedAudioFileException e) 
 		{
-				
+			e.printStackTrace();
 		} 
 		catch (IOException e) 
 		{
-				
+			e.printStackTrace();
 		}				
 		catch(Exception e)
 		{
-				
+			e.printStackTrace();
 		}
 	}
 	
@@ -52,15 +52,15 @@ public class Audio
 		} 
 		catch (UnsupportedAudioFileException e) 
 		{
-				
+			e.printStackTrace();
 		} 
 		catch (IOException e) 
 		{
-				
+			e.printStackTrace();
 		}				
 		catch(Exception e)
 		{
-				
+			e.printStackTrace();
 		}
 	}
 	public static void Stop()
@@ -81,7 +81,7 @@ public class Audio
 		} 
 		catch (IOException e) 
 		{
-			
+			e.printStackTrace();
 		}
 	}
 }

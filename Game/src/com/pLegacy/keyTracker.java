@@ -63,6 +63,7 @@ public class keyTracker implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		//do nothing
 	}
 
 	

@@ -74,7 +74,7 @@ public class GameObjectManager
 			}
 			catch(NullPointerException e)
 			{
-				
+				e.printStackTrace();
 			}
 			_obj.Update();
 		}
@@ -126,7 +126,7 @@ public class GameObjectManager
 	 */
 	public boolean isColliding(GameObject a, GameObject b)
 	{
-		return (a.getArea().intersects(b.getArea()) && !(a.equals(b)));
+		return a.getArea().intersects(b.getArea()) && !(a.equals(b));
 	}
 	/*
 	 * Allows debugging features to be toggled on and off for testing purposes.

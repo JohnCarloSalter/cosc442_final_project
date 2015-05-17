@@ -18,13 +18,13 @@ import com.pLegacy.PanelManager;
 public class Laser extends GameObject
 {
 	private Ship ship;
-	private boolean loaded = false;
+
 	  public Laser(int x, int y, Ship _ship, BufferedImage shot)
 	    {
 	    	super(x, y);
 	    	image = shot;
 	    	ship = _ship;
-	    	if(PanelManager.isPaused == false)
+	    	if(!PanelManager.isPaused)
 	    		startSound();
 	    	
 	    }
@@ -40,7 +40,7 @@ public class Laser extends GameObject
 	@Override
 	public void Load() 
 	{
-		
+		//no  load event
 	}
 
 	@Override
@@ -77,9 +77,9 @@ public class Laser extends GameObject
 	public void onCollision(GameObject obj) 
 	{
 		
-		if(obj instanceof Meteor)
+		if(obj instanceof Meteor && (ship.piercinglasers < 0 || ship.autofireon))
 		{
-			if(ship.piercinglasers < 0 || ship.autofireon == true)
+			
 				Unload();
 		}
 		
