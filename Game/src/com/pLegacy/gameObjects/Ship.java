@@ -56,6 +56,13 @@ public class Ship extends GameObject implements KeyListener, ActionListener
     	
     }
     
+    //Getters
+    public Timer getTimer() { return tm; }
+    //Setters
+    public void setTimestart(boolean b) { timestart = b; }
+    public Timer getAutoduration() { return autoduration; }
+    public void setDmgcounter(int x) { dmgcounter = x; }
+    
 	@Override
 	public void Load() 
 	{
