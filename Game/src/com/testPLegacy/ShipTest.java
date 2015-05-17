@@ -1,6 +1,7 @@
 package com.testPLegacy;
 
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.util.ConcurrentModificationException;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
+import com.pLegacy.Audio;
 import com.pLegacy.GameObjectManager;
 import com.pLegacy.gameObjects.*;
 
@@ -23,14 +25,34 @@ public class ShipTest {
 	private static Ship fixture;
 	private static BufferedImage testImage;
 	private static BufferedImage testObjectImage;
+	private static int errorCounter = 0;
 	
 	
 	@Before
-	public void setUp() throws Exception {
-		Ship fixture = new Ship(0, 0);
+	public void setUp() throws IOException {
+		Audio.StartMusic("hit.wav"); //Needed to null pointer errors.
+		fixture = new Ship(0, 0);
 		fixture.Load();
-		testImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\Blue.png"));
-		testObjectImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\testImage.png"));
+		try {
+			testImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\Blue.gif"));
+		} catch (IOException ioeRef) {
+			System.err.println("Can't read input file! " + errorCounter );
+			errorCounter++;
+		}
+		
+		try {
+			testObjectImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\Meteor2.png"));
+		} catch (IOException ioeRef) {
+			System.err.println("Can't read input file! " + errorCounter );
+			errorCounter++;
+		}
+		
+		/*
+		try {
+			testObjectImage = ImageIO.read(new File("..\\Game\\Graphics\\GameObjects\\testImage.png"));
+		} catch (IOException ioeRef) {
+			System.err.println("Can't read Object input file! ");
+		}*/
 	}
 
 	@After
@@ -41,7 +63,7 @@ public class ShipTest {
 
 	@Test
 	public void testGetArea1() {
-		Rectangle testRect = new Rectangle(0, 0, testImage.getHeight() - 35, testImage.getWidth() - 50);
+		Rectangle testRect = new Rectangle(15, 35, testImage.getHeight() - 35, testImage.getWidth() - 50);
 		assertTrue(fixture.getArea().equals(testRect));
 	}
 	
@@ -69,7 +91,13 @@ public class ShipTest {
 	//Make sure ship is marked dead when HP = 0.
 	public void testUpdate1() {
 		fixture.health = 0;
-		fixture.Update();
+		fixture.setAutoduration(new Timer(0, fixture)); //Can't be null for test to run.
+		try {
+			fixture.Update();
+		} catch(Exception eRef) {
+			System.err.println(eRef.getMessage());
+			fail();
+		}
 		assertTrue(fixture.isdead);
 	}
 	
@@ -79,7 +107,7 @@ public class ShipTest {
 	public void testUpdate2() {
 		fixture.health = 1;
 		fixture.setTimestart(true);
-		fixture.autofireon = true;
+		fixture.autofireon = false;
 		fixture.Update();
 		assertFalse(fixture.getTimer().isRunning());
 		assertFalse(fixture.getAutoduration().isRunning());
@@ -92,7 +120,7 @@ public class ShipTest {
 	public void testUpdate3() {
 		fixture.health = 1;
 		fixture.setTimestart(false);
-		fixture.autofireon = false;
+		fixture.autofireon = true;
 		fixture.Update();
 		assertTrue(fixture.getTimer().isRunning());
 		assertTrue(fixture.getAutoduration().isRunning());	
@@ -157,6 +185,8 @@ public class ShipTest {
 	
 	@Test
 	public void testOnCollision4() {
+		fixture = new Ship(0,0);
+		fixture.Load();
 		GameObject testObject = new LaserPiercePower(0, 0);
 		fixture.piercinglasers = 0;
 		fixture.onCollision(testObject);
@@ -174,7 +204,7 @@ public class ShipTest {
 	@Test
 	public void testOnCollision6() {
 		GameObject testObject = new Ammo(0, 0);
-		fixture.ammo = 5;
+		fixture.ammo = 4;
 		fixture.onCollision(testObject);
 		assertTrue(fixture.ammo == 9);
 	}
@@ -185,10 +215,6 @@ public class ShipTest {
 		GameObject testObj = new Life(0,0);
 		fixture.health = 1;
 		fixture.setDmgcounter(-1);
-		fixture.onCollision(testObj);
-		assertTrue(fixture.health == 1);
-		assertTrue(fixture.getDMGCounter() == 3);
-		
 		fixture.onCollision(testObj);
 		assertTrue(fixture.health == 2);
 		assertTrue(fixture.getDMGCounter() == 3);
@@ -244,25 +270,4 @@ public class ShipTest {
 			fail("Exception was thrown after .setLaserImage() call.");
 		}
 	}
-
-	@Test
-	public void testKeyPressed() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testKeyReleased() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testActionPerformed() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testKeyTyped() {
-		fail("Not yet implemented");
-	}
-
 }

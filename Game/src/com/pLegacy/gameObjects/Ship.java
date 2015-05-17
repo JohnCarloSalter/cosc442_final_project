@@ -60,11 +60,12 @@ public class Ship extends GameObject implements KeyListener, ActionListener
     public Timer getTimer() { return tm; }
     public int getCD() { return cd; }
     public int getDMGCounter() { return dmgcounter; }
+    public Timer getAutoduration() { return autoduration; }
     //Setters
     public void setCD(int x) { cd = x; }
     public void setTimestart(boolean b) { timestart = b; }
-    public Timer getAutoduration() { return autoduration; }
     public void setDmgcounter(int x) { dmgcounter = x; }
+    public void setAutoduration(Timer t) { autoduration = t; }
     
 	@Override
 	public void Load() 
@@ -204,6 +205,17 @@ public class Ship extends GameObject implements KeyListener, ActionListener
 		}
 		if(obj instanceof Life && health < 10)
 			health++;
+		if(health >= 10) {
+			dmgcounter = 0;
+		} else if(health >= 7) {
+			dmgcounter = 1;
+		} else if(health >=4) {
+			dmgcounter = 2;
+		} else {
+			dmgcounter = 3;
+		}
+		
+		/*Original Code
 		switch(health){
 			case(10):
 				dmgcounter = 0;
@@ -216,8 +228,9 @@ public class Ship extends GameObject implements KeyListener, ActionListener
 				break;
 			case(1):
 				dmgcounter = 3;
-				break;
+				break;				
 		}
+		*/
 	}
 	
 	
